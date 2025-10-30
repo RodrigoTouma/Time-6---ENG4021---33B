@@ -1,9 +1,15 @@
-from django.urls.conf import path
-from QuizCultural import views
+from django.urls import path
+from . import views
 
-app_name = "QuizCultural"
+app_name = 'quizcultural'
 
 urlpatterns = [
-    path("home/", views.home, name='homepage'),
-    path("insereCarro/", views.insereCarro, name='insereCarro'),
+    # Página inicial do quiz cultural
+    path('', views.home, name='home'),
+    # Lista todas as perguntas cadastradas
+    path('lista/', views.listar_perguntas, name='listar_perguntas'),
+    # Formulário de busca
+    path('busca/', views.busca, name='busca'),
+    # Resultado da busca
+    path('resultado/', views.resultado_busca, name='resultado_busca'),
 ]
