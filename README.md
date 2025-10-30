@@ -7,7 +7,8 @@ Este repositório contém o projeto do Grupo 6 para a disciplina **ENG4021 – P
 | Nome                | Matrícula (PUC-Rio) | Responsabilidade principal |
 |---------------------|----------------------|----------------------------|
 | **Matheus Raffaeli** | –                    | Modelagem de banco de dados e documentação (README) |
-| **Rodrigo Touma**    | 2510583              | Autenticação de usuários e integração frontend/backend |
+| "**Rodrigo Touma**" | 2510583 | Autenticação de usuários |
+
 | **Pedro Gabriel**    | –                    | Lógica do quiz, importação de perguntas e suporte técnico |
 
 ## 🌟 Objetivo do projeto
