@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Triviva - Quiz Cultural</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Triviva!</h1>
+    <p>Este é um quiz cultural com perguntas de diversas categorias.</p>
+    <nav>
+        <ul>
+            <li><a href="{% url 'quizcultural:listar_perguntas' %}">Listar perguntas</a></li>
+            <li><a href="{% url 'quizcultural:busca' %}">Buscar perguntas</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
