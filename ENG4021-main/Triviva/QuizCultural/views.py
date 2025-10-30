@@ -1,25 +1,35 @@
 from django.shortcuts import render
-from .forms import MTCarsForm
-from django.http import HttpResponse
-from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+from .models import Pergunta
+
 
 def home(request):
-    return render(request, "nomeRelativoAoMeuTema/home.html")
+    """Renderiza a página inicial do Quiz Cultural."""
+    return render(request, 'quizcultural/home.html')
 
-def insereCarro(request):
-    if request.method == 'GET':
-        # If the request method is GET, render the form
-        contexto = { "form": MTCarsForm(), }
-        return render(request, "nomeRelativoAoMeuTema/insereCarro.html", contexto)
+
+@login_required
+def listar_perguntas(request):
+    """Exibe todas as perguntas cadastradas no banco de dados."""
+    perguntas = Pergunta.objects.all()
+    contexto = {'perguntas': perguntas}
+    return render(request, 'quizcultural/lista.html', contexto)
+
+
+@login_required
+def busca(request):
+    """Exibe um formulário simples para buscar perguntas por texto."""
+    return render(request, 'quizcultural/busca.html')
+
+
+@login_required
+def resultado_busca(request):
+    """Filtra perguntas contendo o termo de busca enviado via GET."""
+    termo = request.GET.get('termo', '')
+    if termo:
+        perguntas = Pergunta.objects.filter(texto__icontains=termo)
     else:
-        # If the request method is POST, process the form
-        form = MTCarsForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # coloque aqui o nome do link para o qual você quer redirecionar em caso de sucesso
-            return HttpResponseRedirect(reverse_lazy('nomeRelativoAoMeuTema:home'))
-        else:
-            # em caso de erro, renderize o formulário novamente com os erros
-            return render(request, "nomeRelativoAoMeuTema/insereCarro.html", {"form": form})
+        perguntas = Pergunta.objects.all()
+    contexto = {'perguntas': perguntas, 'busca': termo}
+    return render(request, 'quizcultural/lista.html', contexto)
