@@ -21,7 +21,9 @@ from django.urls.conf import include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("meuTema/", include("QuizCultural.urls")),
+    # Use quizcultural for quiz app
+    path("quizculturalQuizCultural include("QuizCultural.urls")),
+    # Use lowercase usuario path
     path("usuario/", include("usuario.urls")),
     path('accounts/', include('django.contrib.auth.urls'))
 ]
