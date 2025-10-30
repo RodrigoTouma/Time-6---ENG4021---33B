@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Perguntas - Triviva</title>
+</head>
+<body>
+    <h1>Buscar perguntas</h1>
+    <form method="get" action="{% url 'quizcultural:resultado_busca' %}">
+        <label for="termo">Termo de busca:</label>
+        <input type="text" id="termo" name="termo">
+        <button type="submit">Buscar</button>
+    </form>
+    <p><a href="{% url 'quizcultural:home' %}">Voltar ao início</a></p>
+</body>
+</html>
