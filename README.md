@@ -8,7 +8,7 @@ Este repositório contém o projeto do Grupo 6 para a disciplina **ENG4021 – P
 |---------------------|----------------------|----------------------------|
 | **Matheus Raffaeli** | 2111370                    | Modelagem de banco de dados e documentação (README) |
 | **Rodrigo Touma** | 2510583 | Autenticação de usuários e design do site |
-| **Pedro Gabriel**    | –                    | Lógica do quiz, importação de perguntas e suporte técnico |
+| **Pedro Gabriel**    | 2411255                    | Lógica do quiz, importação de perguntas e suporte técnico |
 
 ## 🌟 Objetivo do projeto
 
