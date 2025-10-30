@@ -78,35 +78,35 @@ Esta é a tela inicial do TRIVIVA. Aqui, o usuário pode clicar em 'Login' para 
 
 2) Tela de Login
 Na tela de login, o usuário deve inserir seu e-mail e senha cadastrados. Caso tenha esquecido a senha, pode clicar em 'Esqueci minha senha'. Se ainda não possui uma conta, clique em 'Cadastre-se'.
-<img width="825" height="533" alt="image" src="https://github.com/user-attachments/assets/90a0e2f9-627c-4eba-8837-6366b370364a" />
+<img width="600" height="388" alt="image" src="https://github.com/user-attachments/assets/90a0e2f9-627c-4eba-8837-6366b370364a" />
 
 3) Tela de Cadastro
 Para criar uma conta, preencha os campos com e-mail, nome, sobrenome e senha. Após confirmar a senha, clique em 'Cadastre-se'. Caso já tenha uma conta, volte à tela de login clicando em 'login'.
-<img width="825" height="532" alt="image" src="https://github.com/user-attachments/assets/34073a43-f6ae-43f2-ae1f-ea2dd97b8647" />
+<img width="600" height="388" alt="image" src="https://github.com/user-attachments/assets/34073a43-f6ae-43f2-ae1f-ea2dd97b8647" />
 
 4) Modo Nacional
 Neste modo, o jogador testa seus conhecimentos sobre o Brasil. Clique no botão 'JOGAR' para iniciar as perguntas referentes à cultura e história nacional.
-<img width="825" height="531" alt="image" src="https://github.com/user-attachments/assets/140d64ff-0c8d-4667-829e-f05f763cd318" />
+<img width="600" height="388" alt="image" src="https://github.com/user-attachments/assets/140d64ff-0c8d-4667-829e-f05f763cd318" />
 
 5) Modo Global
 O modo Global apresenta perguntas sobre cultura, geografia e curiosidades de diversos países. Clique em 'JOGAR' para começar.
-<img width="825" height="533" alt="image" src="https://github.com/user-attachments/assets/a4da8165-a666-4b93-8bdd-620f4f4d1b7f" />
+<img width="600" height="388" alt="image" src="https://github.com/user-attachments/assets/a4da8165-a666-4b93-8bdd-620f4f4d1b7f" />
 
 6) Modo Ranqueado
 O modo Ranqueado desafia o jogador a subir no ranking a cada partida. É ideal para quem busca competir e melhorar o desempenho a cada rodada.
-<img width="825" height="534" alt="image" src="https://github.com/user-attachments/assets/dde7aaaa-22f1-44c6-8606-905a95bd664f" />
+<img width="600" height="388" alt="image" src="https://github.com/user-attachments/assets/dde7aaaa-22f1-44c6-8606-905a95bd664f" />
 
 7) Modo Relógio
 Neste modo, o jogador deve responder as perguntas dentro de um tempo limite. A rapidez e precisão são essenciais para vencer.
-<img width="825" height="530" alt="image" src="https://github.com/user-attachments/assets/715356c4-aea9-424a-a986-35fcea9a197d" />
+<img width="600" height="388" alt="image" src="https://github.com/user-attachments/assets/715356c4-aea9-424a-a986-35fcea9a197d" />
 
 8) Pergunta
 Durante o jogo, cada pergunta apresenta uma imagem e quatro alternativas. Selecione a resposta correta para prosseguir. Exemplo: na imagem abaixo, a questão pergunta sobre o autor da obra 'Abaporu'.
-<img width="825" height="534" alt="image" src="https://github.com/user-attachments/assets/9b067ea7-c71b-45c4-97c0-73d8ed567bad" />
+<img width="600" height="388" alt="image" src="https://github.com/user-attachments/assets/9b067ea7-c71b-45c4-97c0-73d8ed567bad" />
 
 9) Tela de Resultados
 Ao finalizar o quiz, o sistema mostra o total de acertos e o número de perguntas respondidas. Clique em 'Jogar novamente' para reiniciar o jogo.
-<img width="825" height="516" alt="image" src="https://github.com/user-attachments/assets/bc9340b3-030d-4281-98bd-72234f851cda" />
+<img width="600" height="388" alt="image" src="https://github.com/user-attachments/assets/bc9340b3-030d-4281-98bd-72234f851cda" />
 
 ## 🖼️ Design e referências
 
