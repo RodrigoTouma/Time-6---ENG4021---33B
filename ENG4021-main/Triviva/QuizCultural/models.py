@@ -1,20 +1,31 @@
 from django.db import models
 
-# Create your models here.
- 
-class MTCars(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(db_column='NAME') # Field name made lowercase.
-    mpg = models.FloatField(db_column='MPG') # Field name made lowercase.
-    cyl = models.IntegerField(db_column='CYL') # Field name made lowercase.
-    disp = models.FloatField(db_column='DISP') # Field name made lowercase.
-    hp = models.IntegerField(db_column='HP') # Field name made lowercase.
-    wt = models.FloatField(db_column='WT') # Field name made lowercase.
-    sec = models.FloatField(db_column='QSEC') # Field name made lowercase.
-    vs = models.IntegerField(db_column='VS') # Field name made lowercase.
-    am = models.IntegerField(db_column='AM') # Field name made lowercase.
-    gear = models.IntegerField(db_column='GEAR') # Field name made lowercase.
-    
-    def __str__(self):
-        return f'Carro: {self.name}'
-        
+
+class Pergunta(models.Model):
+    """
+    Modelo que representa uma pergunta do quiz cultural.
+    Cada pergunta possui um texto e quatro alternativas (A, B, C e D), além da
+    indicação de qual alternativa é a correta, categoria e nível de dificuldade.
+    """
+    texto = models.CharField(max_length=255, help_text='Texto da pergunta')
+    opcao_a = models.CharField(max_length=100, help_text='Alternativa A')
+    opcao_b = models.CharField(max_length=100, help_text='Alternativa B')
+    opcao_c = models.CharField(max_length=100, help_text='Alternativa C')
+    opcao_d = models.CharField(max_length=100, help_text='Alternativa D')
+    resposta_correta = models.CharField(
+        max_length=1,
+        help_text='Letra da alternativa correta (A, B, C ou D)'
+    )
+    categoria = models.CharField(
+        max_length=100,
+        blank=True,
+        help_text='Categoria da pergunta (opcional)'
+    )
+    dificuldade = models.CharField(
+        max_length=50,
+        blank=True,
+        help_text='Nível de dificuldade (opcional)'
+    )
+
+    def __str__(self) -> str:
+        return self.texto
