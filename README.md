@@ -74,7 +74,8 @@ A proposta é criar um site de **quiz cultural** que permita ao usuário logar, 
 
 1) **Tela de Início**  
 Esta é a tela inicial do TRIVIVA. Aqui, o usuário pode clicar em 'Login' para entrar na conta ou selecionar o modo de jogo desejado: Nacional, Global, Ranqueado ou Relógio.
-<img width="600" height="388" alt="image" src="https://github.com/user-attachments/assets/90a0e2f9-627c-4eba-8837-6366b370364a" />
+<img width="600" height="388" alt="image" src="https://github.com/user-attachments/assets/85cd1a3f-fd09-4dbc-aa25-8caea7e4d6be" />
+
 
 2) **Tela de Login**  
 Na tela de login, o usuário deve inserir seu e-mail e senha cadastrados. Caso tenha esquecido a senha, pode clicar em 'Esqueci minha senha'. Se ainda não possui uma conta, clique em 'Cadastre-se'.
