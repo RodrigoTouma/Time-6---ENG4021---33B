@@ -21,3 +21,29 @@ class Meta:
     verbose_name_plural = "Perguntas"
 
 def __str__(self):
+    return self.enunciado[:50] + "..."
+
+class Alternativa(models.Model):
+    pergunta = models.ForeignKey(Pergunta, on_delete=models.CASCADE, related_name="alternativas")
+    texto = models.CharField(max_length=255)
+    correta = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = "Alternativa"
+        verbose_name_plural = "Alternativas"
+
+    def __str__(self):
+        return f"{self.texto} ({'correta' if self.correta else 'errada'})"
+
+class Pontuacao(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    pontos = models.IntegerField(default=0)
+    data = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name="Pontuação"
+        verbose_name_plural="Pontuações"
+        ordering = ["-pontos", "-data"] # ranking do maior para o menor
+    
+    def __str__(self):
+        return f"{self.usuario.username} - {self.pontos} pontos"
