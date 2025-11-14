@@ -1,25 +1,46 @@
 from django.shortcuts import render
-from .forms import MTCarsForm
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-
-# Create your views here.
+from .models import Pergunta
+from django.db.models import Q
+import random
 
 def home(request):
     return render(request, "nomeRelativoAoMeuTema/home.html")
 
-def insereCarro(request):
+def modo_nacional(request):
     if request.method == 'GET':
         # If the request method is GET, render the form
-        contexto = { "form": MTCarsForm(), }
-        return render(request, "nomeRelativoAoMeuTema/insereCarro.html", contexto)
+        perguntas = list(Pergunta.objects.filter(origem="nacional"))
+        random.shuffle(perguntas)
+        contexto = {"perguntas": perguntas}
+        return render(request, "quiz/modo_nacional.html", contexto)
     else:
-        # If the request method is POST, process the form
-        form = MTCarsForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # coloque aqui o nome do link para o qual você quer redirecionar em caso de sucesso
-            return HttpResponseRedirect(reverse_lazy('nomeRelativoAoMeuTema:home'))
-        else:
-            # em caso de erro, renderize o formulário novamente com os erros
-            return render(request, "nomeRelativoAoMeuTema/insereCarro.html", {"form": form})
+        return HttpResponseRedirect(reverse_lazy("quiz:home"))
+
+def modo_global(request):
+    if request.method == "GET":
+        perguntas = list(Pergunta.objects.filter(origem="global"))
+        random.shuffle(perguntas)
+        contexto = {"perguntas": perguntas}
+        return render(request, "quiz/modo_global.html", contexto)
+    else:
+        return HttpResponseRedirect(reverse_lazy("quiz:home"))
+
+def modo_ranqueado(request):
+    if request.method == "GET":
+        perguntas = list(Pergunta.objects.filter(Q(origem="nacional") | Q(origem="global")))
+        random.shuffle(perguntas)
+        contexto = {"perguntas": perguntas}
+        return render(request, "quiz/modo_ranqueado.html", contexto)
+    else:
+        return HttpResponseRedirect(reverse_lazy("quiz:home"))
+
+def modo_relogio(request):
+    if request.method == "GET":
+        perguntas = list(Pergunta.objects.filter(Q(origem="nacional") | Q(origem="global")))
+        random.shuffle(perguntas)
+        contexto = {"perguntas": perguntas,"tempo_limite": 60}
+        return render(request, "quiz/modo_relogio.html", contexto)
+    else:
+        return HttpResponseRedirect(reverse_lazy("quiz:home"))

@@ -6,22 +6,25 @@ class Categoria(models.Model):
 
     class Meta:
         verbose_name = "Categoria"
-        verbose_meta_plural = "Categorias"
+        verbose_name_plural = "Categorias"
 
     def __str__(self):
         return self.nome
 
+
 class Pergunta(models.Model):
+    ORIGEM_CHOICES = [("nacional", "Nacional"),("global", "Global")]
     enunciado = models.TextField()
+    origem = models.CharField(max_length=20, choices=ORIGEM_CHOICES, default="nacional")
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True, blank=True, related_name="perguntas")
-    dificuldade=models.CharField(max_length=20,default="normal",choices=[("facil","Fácil"),("normal","Normal"),("dificil","Difícil")])
+    dificuldade = models.CharField(max_length=20,default="normal",choices=[("facil", "Fácil"),("normal", "Normal"),("dificil", "Difícil")])
 
-class Meta:
-    verbose_name = "Pergunta"
-    verbose_name_plural = "Perguntas"
+    class Meta:
+        verbose_name = "Pergunta"
+        verbose_name_plural = "Perguntas"
 
-def __str__(self):
-    return self.enunciado[:50] + "..."
+    def __str__(self):
+        return self.enunciado[:50] + "..."
 
 class Alternativa(models.Model):
     pergunta = models.ForeignKey(Pergunta, on_delete=models.CASCADE, related_name="alternativas")
@@ -41,9 +44,9 @@ class Pontuacao(models.Model):
     data = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name="Pontuação"
-        verbose_name_plural="Pontuações"
-        ordering = ["-pontos", "-data"] # ranking do maior para o menor
-    
+        verbose_name = "Pontuação"
+        verbose_name_plural = "Pontuações"
+        ordering = ["-pontos", "-data"]
+
     def __str__(self):
         return f"{self.usuario.username} - {self.pontos} pontos"
