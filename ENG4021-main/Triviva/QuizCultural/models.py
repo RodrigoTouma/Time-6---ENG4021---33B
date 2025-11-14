@@ -1,20 +1,23 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
- 
-class MTCars(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(db_column='NAME') # Field name made lowercase.
-    mpg = models.FloatField(db_column='MPG') # Field name made lowercase.
-    cyl = models.IntegerField(db_column='CYL') # Field name made lowercase.
-    disp = models.FloatField(db_column='DISP') # Field name made lowercase.
-    hp = models.IntegerField(db_column='HP') # Field name made lowercase.
-    wt = models.FloatField(db_column='WT') # Field name made lowercase.
-    sec = models.FloatField(db_column='QSEC') # Field name made lowercase.
-    vs = models.IntegerField(db_column='VS') # Field name made lowercase.
-    am = models.IntegerField(db_column='AM') # Field name made lowercase.
-    gear = models.IntegerField(db_column='GEAR') # Field name made lowercase.
-    
+class Categoria(models.Model):
+    nome = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name = "Categoria"
+        verbose_meta_plural = "Categorias"
+
     def __str__(self):
-        return f'Carro: {self.name}'
-        
+        return self.nome
+
+class Pergunta(models.Model):
+    enunciado = models.TextField()
+    categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True, blank=True, related_name="perguntas")
+    dificuldade=models.CharField(max_length=20,default="normal",choices=[("facil","Fácil"),("normal","Normal"),("dificil","Difícil")])
+
+class Meta:
+    verbose_name = "Pergunta"
+    verbose_name_plural = "Perguntas"
+
+def __str__(self):
