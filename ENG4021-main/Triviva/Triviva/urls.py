@@ -21,7 +21,7 @@ from django.urls.conf import include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("meuTema/", include("QuizCultural.urls", namespace="quiz")),
+    path("", include("QuizCultural.urls", namespace="quiz")),
     path("usuario/", include("usuario.urls")),
     path('accounts/', include('django.contrib.auth.urls'))
 ]
