@@ -1,6 +1,5 @@
 from django.apps import AppConfig
 
-
 class QuizCulturalConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "Triviva.QuizCultural"
+    name = "QuizCultural"
