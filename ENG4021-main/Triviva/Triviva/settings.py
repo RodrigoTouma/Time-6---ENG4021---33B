@@ -131,3 +131,10 @@ CSRF_TRUSTED_ORIGINS = [
 LOGIN_REDIRECT_URL = '/meuTema/home/'  # Substitua por qualquer URL desejada
 LOGOUT_REDIRECT_URL = '/accounts/login/'  # Substitua por qualquer URL desejada
 
+
+# Adições para o login
+LOGOUT_REDIRECT_URL = '/accounts/login/'  # Para onde vai após logout
+LOGIN_URL = '/accounts/login/'       # URL de login (padrão)
+# ATENÇÃO!!! Troque o valor da variável abaixo para que ela seja uma das rotas
+# válidas no seu arquivo MeuSite/curriculo/urls.py
+LOGIN_REDIRECT_URL = '/'   # Para onde vai após login

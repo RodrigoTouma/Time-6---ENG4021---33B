@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 app_name = 'quizcultural'
@@ -12,4 +12,6 @@ urlpatterns = [
     path('busca/', views.busca, name='busca'),
     # Resultado da busca
     path('resultado/', views.resultado_busca, name='resultado_busca'),
+    # Login
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

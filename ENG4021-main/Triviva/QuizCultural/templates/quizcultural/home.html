@@ -9,8 +9,10 @@
     <p>Este é um quiz cultural com perguntas de diversas categorias.</p>
     <nav>
         <ul>
+            <li><a href="{% url 'login' %}">Login</a></li>
             <li><a href="{% url 'quizcultural:listar_perguntas' %}">Listar perguntas</a></li>
             <li><a href="{% url 'quizcultural:busca' %}">Buscar perguntas</a></li>
+            <li><form method='POST' action="{% url 'logout' %}">{% csrf_token %}<button type='submit'>Logout</button></form></li>
         </ul>
     </nav>
 </body>

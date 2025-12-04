@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Cadastro</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="icon-area">
+            <img src='ArquivosTemp/user.png' alt='User'>
+        </div>
+
+        <div class="form-area">
+
+            <input type="email" placeholder="Email" class="input-field">
+
+            <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+                <input type="text" placeholder="Nome" class="input-field" style="margin-bottom: 0;">
+                <input type="text" placeholder="Sobrenome" class="input-field" style="margin-bottom: 0;">
+            </div>
+
+            <input type="password" placeholder="Senha" class="input-field">
+            <input type="password" placeholder="Confirme a senha" class="input-field">
+
+            <button class="login-btn">Cadastre-se</button>
+
+            <p class="signup-text">
+                Já tem conta? <a href="#" class="signup-link">Faça login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

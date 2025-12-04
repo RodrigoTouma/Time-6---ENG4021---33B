@@ -16,14 +16,14 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
-from django.urls.conf import include
+from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     # Use quizcultural for quiz app
-    path("quizculturalQuizCultural include("QuizCultural.urls")),
+    path("quizculturalQuizCultural", include("QuizCultural.urls")),
     # Use lowercase usuario path
     path("usuario/", include("usuario.urls")),
+    # Mudança no include para login
     path('accounts/', include('django.contrib.auth.urls'))
 ]
