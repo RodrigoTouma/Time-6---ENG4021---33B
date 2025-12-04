@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta {{ numero }}</title>
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+</head>
+
+<body>
+
+<div class="quiz-container">
+    <h2>Pergunta {{ numero }} / {{ total }}</h2>
+
+    <p class="enunciado">{{ pergunta.enunciado }}</p>
+
+    <form method="POST" action="{% url 'quiz:responder' %}">
+        {% csrf_token %}
+        <div class="alternativas">
+            {% for alt in alternativas %}
+                <label class="alternativa">
+                    <input type="radio" name="alternativa" value="{{ alt.id }}" required>
+                    {{ alt.texto }}
+                </label>
+            {% endfor %}
+        </div>
+
+        <button type="submit" class="botao-responder">Responder</button>
+    </form>
+</div>
+
+</body>
+</html>

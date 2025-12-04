@@ -9,4 +9,9 @@ urlpatterns = [
     path("global/", views.modo_global, name='modo_global'),
     path("ranqueado/", views.modo_ranqueado, name='modo_ranqueado'),
     path("relogio/", views.modo_relogio, name='modo_relogio'),
+
+    path("pergunta/", views.quiz_pergunta, name="quiz_pergunta"),
+    path("responder/", views.responder, name="responder"),
+    path("resultado/", views.resultado, name="resultado"),
+    path("ranking/", views.ranking, name="ranking"),
 ]

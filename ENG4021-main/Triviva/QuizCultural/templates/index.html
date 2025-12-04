@@ -9,33 +9,34 @@
 </head>
 <body>
 
-  <a href="#" class="login">
-    <img src="icone-login.png" alt="Login" class="login-icon">
+  <a href="{% url 'login' %}" class="login">
+    <img src="{% static 'img/icone-login.png' %}" alt="Login" class="login-icon">
     LOGIN
   </a>
 
-  <img src="logo-triviva.png" alt="Logo Triviva" class="logo">
+  <img src="{% static 'img/logo-triviva.png' %}" alt="Logo Triviva" class="logo">
 
   <h2>Selecione o modo de jogo</h2>
 
   <div class="modes">
-    <a href="modo-nacional.html">
-      <img src="icone-brasil.png" alt="Modo Brasil" class="mode">
+
+    <a href="{% url 'quiz:modo_nacional' %}">
+      <img src="{% static 'img/icone-brasil.png' %}" alt="Modo Brasil" class="mode">
     </a>
 
-    <a href="modo-global.html">
-      <img src="icone-mapa.png" alt="Modo Internacional" class="mode">
+    <a href="{% url 'quiz:modo_global' %}">
+      <img src="{% static 'img/icone-mapa.png' %}" alt="Modo Internacional" class="mode">
     </a>
 
-    <a href="modo-ranqueado.html">
-      <img src="icone-trofeu.png" alt="Modo Competitivo" class="mode">
+    <a href="{% url 'quiz:modo_ranqueado' %}">
+      <img src="{% static 'img/icone-trofeu.png' %}" alt="Modo Competitivo" class="mode">
     </a>
 
-    <a href="modo-relogio.html">
-      <img src="icone-relogio.png" alt="Modo Relógio" class="mode">
+    <a href="{% url 'quiz:modo_relogio' %}">
+      <img src="{% static 'img/icone-relogio.png' %}" alt="Modo Relógio" class="mode">
     </a>
+
   </div>
-
 
 </body>
 </html>

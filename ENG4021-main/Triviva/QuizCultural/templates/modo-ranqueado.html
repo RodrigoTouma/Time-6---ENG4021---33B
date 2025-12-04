@@ -15,20 +15,28 @@
         </div>
 
         <div class="image-section">
-            <img src="icone-trofeu.png" alt="Troféu" class="main-icon">
+            <img src="{% static 'img/icone-trofeu.png' %}" alt="Troféu" class="main-icon">
         </div>
 
         <div class="game-mode">
             <h2>Selecione o modo de jogo</h2>
             <div class="icons">
-                <a href="nacional.html"><img src="icone-brasil.png" alt="Modo Nacional"></a>
-                <a href="global.html"><img src="icone-mapa.png" alt="Modo Global"></a>
-                <a href="ranqueado.html"><img src="icone-trofeu.png" alt="Modo Ranqueado"></a>
-                <a href="relogio.html"><img src="icone-relogio.png" alt="Modo Relógio"></a>
+                <a href="{% url 'quiz:modo_nacional' %}">
+                    <img src="{% static 'img/icone-brasil.png' %}">
+                </a>
+                <a href="{% url 'quiz:modo_global' %}">
+                    <img src="{% static 'img/icone-mapa.png' %}">
+                </a>
+                <a href="{% url 'quiz:modo_ranqueado' %}">
+                    <img src="{% static 'img/icone-trofeu.png' %}">
+                </a>
+                <a href="{% url 'quiz:modo_relogio' %}">
+                    <img src="{% static 'img/icone-relogio.png' %}">
+                </a>
             </div>
         </div>
 
-        <button class="play-btn">JOGAR</button>
+        <a href="{% url 'quiz:modo_ranqueado' %}" class="play-btn">JOGAR</a>
     </div>
 </body>
 </html>
