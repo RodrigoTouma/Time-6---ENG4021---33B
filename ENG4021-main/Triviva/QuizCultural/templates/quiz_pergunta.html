@@ -30,5 +30,26 @@
     </form>
 </div>
 
+{% if request.session.modo == "relogio" %}
+<script>
+let tempo = 60;
+
+const textoTempo = document.getElementById("tempo");
+
+// contador regressivo
+let intervalo = setInterval(() => {
+    tempo--;
+    textoTempo.textContent = tempo;
+
+    if (tempo <= 0) {
+        clearInterval(intervalo);
+
+        // envia para página de resultado automaticamente
+        window.location.href = "{% url 'quiz:resultado' %}";
+    }
+}, 1000);
+</script>
+{% endif %}
+
 </body>
 </html>
