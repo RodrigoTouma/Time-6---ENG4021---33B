@@ -86,7 +86,15 @@ def responder(request):
 
     # Soma ponto se correta
     if alternativa.correta:
-        request.session["pontos"] = request.session.get("pontos", 0) + 1
+        dificuldade = alternativa.pergunta.dificuldade
+        pontos_por_dificuldade = {
+            "facil": 1,
+            "normal": 2,
+            "dificil": 3,
+    }
+
+    pontos = pontos_por_dificuldade.get(dificuldade, 1)
+    request.session["pontos"] = request.session.get("pontos", 0) + pontos
 
     # Avança pergunta
     request.session["index"] = request.session.get("index", 0) + 1
