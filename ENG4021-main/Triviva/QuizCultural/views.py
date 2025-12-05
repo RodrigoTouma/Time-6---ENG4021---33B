@@ -4,7 +4,9 @@ from django.urls import reverse_lazy
 from .models import Pergunta, Alternativa, Pontuacao
 from django.db.models import Q
 import random
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def home(request):
     return render(request, "index.html")
 
