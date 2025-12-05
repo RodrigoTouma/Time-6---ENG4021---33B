@@ -20,9 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    # Use quizcultural for quiz app
-    path("quizculturalQuizCultural", include("QuizCultural.urls")),
-    # Use lowercase usuario path
+    path("meuTema/", include("QuizCultural.urls", namespace="quiz")),
     path("usuario/", include("usuario.urls")),
     # Mudança no include para login
     path('accounts/', include('django.contrib.auth.urls'))

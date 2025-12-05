@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+</head>
+
+<body>
+
+<div class="resultado-container">
+    <h1>Resultado</h1>
+
+    <h2>Você fez <strong>{{ pontos }}</strong> pontos!</h2>
+
+    {% if modo == "ranqueado" %}
+        <p>Sua pontuação foi salva no ranking.</p>
+    {% endif %}
+
+    <a href="{% url 'quiz:homepage' %}" class="botao-voltar">Voltar ao início</a>
+    <a href="{% url 'quiz:ranking' %}" class="botao-ranking">Ver Ranking</a>
+</div>
+
+</body>
+</html>

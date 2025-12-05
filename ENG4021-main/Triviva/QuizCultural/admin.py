@@ -1,9 +1,7 @@
 from django.contrib import admin
-from .models import Pergunta
+from .models import Categoria, Pergunta, Alternativa, Pontuacao
 
-
-@admin.register(Pergunta)
-class PerguntaAdmin(admin.ModelAdmin):
-    """Administração da classe Pergunta no painel do Django."""
-    list_display = ("texto", "categoria", "dificuldade")
-    search_fields = ("texto", "categoria")
+admin.site.register(Categoria)
+admin.site.register(Pergunta)
+admin.site.register(Alternativa)
+admin.site.register(Pontuacao)

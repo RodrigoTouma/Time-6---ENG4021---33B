@@ -1,17 +1,17 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 
-app_name = 'quizcultural'
+app_name = "quiz"
 
 urlpatterns = [
-    # Página inicial do quiz cultural
-    path('', views.home, name='home'),
-    # Lista todas as perguntas cadastradas
-    path('lista/', views.listar_perguntas, name='listar_perguntas'),
-    # Formulário de busca
-    path('busca/', views.busca, name='busca'),
-    # Resultado da busca
-    path('resultado/', views.resultado_busca, name='resultado_busca'),
-    # Login
-    path('accounts/', include('django.contrib.auth.urls')),
+    path("", views.home, name='homepage'),
+    path("nacional/", views.modo_nacional, name='modo_nacional'),
+    path("global/", views.modo_global, name='modo_global'),
+    path("ranqueado/", views.modo_ranqueado, name='modo_ranqueado'),
+    path("relogio/", views.modo_relogio, name='modo_relogio'),
+
+    path("pergunta/", views.quiz_pergunta, name="quiz_pergunta"),
+    path("responder/", views.responder, name="responder"),
+    path("resultado/", views.resultado, name="resultado"),
+    path("ranking/", views.ranking, name="ranking"),
 ]
