@@ -1,7 +1,8 @@
 from django.urls import path
-from django.urls.conf import include
+from . import views
 
 app_name = 'usuario'
 
 urlpatterns = [
+    path("cadastro/", views.cadastro, name="cadastro"),
 ]

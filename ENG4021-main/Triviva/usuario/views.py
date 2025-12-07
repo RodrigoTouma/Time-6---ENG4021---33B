@@ -13,3 +13,6 @@ class ClasseProtegida(LoginRequiredMixin, View):
    
   def post(self, request, *args, **kwargs):
     return render(request, 'chatsec/inicio.html')
+
+def cadastro(request):
+  return render(request, "usuario/cadastro.html")
