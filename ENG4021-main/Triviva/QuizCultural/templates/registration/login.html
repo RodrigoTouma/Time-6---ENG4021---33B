@@ -16,12 +16,18 @@
         </div>
 
         <div class="form-area">
-            <input type="email" placeholder="Email" class="input-field">
-            <input type="password" placeholder="Senha" class="input-field">
+             <form method="post" style="all: unset;">
+                {% csrf_token %}
 
-            <a href="#" class="forgot-link">Esqueci minha senha</a>
+                <input type="email" name="username" placeholder="Email" class="input-field">
+                <input type="password" name="password" placeholder="Senha" class="input-field">
 
-            <button class="login-btn">Login</button>
+                <a href="#" class="forgot-link">Esqueci minha senha</a>
+
+                <button type="submit" class="login-btn" style="display:block; width:100%;">
+                    Login
+                </button>
+            </form>
 
             <p class="signup-text">
                 Não tem conta?

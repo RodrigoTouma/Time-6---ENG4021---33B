@@ -128,12 +128,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://127.0.0.1:8000',
 ]
 
-LOGIN_REDIRECT_URL = '/'  # Substitua por qualquer URL desejada
-LOGOUT_REDIRECT_URL = '/'  # Substitua por qualquer URL desejada
-
-
-# Adições para o login
-LOGOUT_REDIRECT_URL = '/accounts/login/'  # Para onde vai após logout
-LOGIN_URL = '/accounts/login/'       # URL de login (padrão)
-# Falta testar
-LOGIN_REDIRECT_URL = '/'   # Para onde vai após login
+# === Autenticação ===
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/meuTema/'     # vai para a homepage do seu quiz
+LOGOUT_REDIRECT_URL = '/accounts/login/'
