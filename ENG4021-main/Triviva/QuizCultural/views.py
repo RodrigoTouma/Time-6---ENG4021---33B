@@ -93,8 +93,8 @@ def responder(request):
             "dificil": 3,
     }
 
-    pontos = pontos_por_dificuldade.get(dificuldade, 1)
-    request.session["pontos"] = request.session.get("pontos", 0) + pontos
+        pontos = pontos_por_dificuldade.get(dificuldade, 1)
+        request.session["pontos"] = request.session.get("pontos", 0) + pontos
 
     # Avança pergunta
     request.session["index"] = request.session.get("index", 0) + 1
