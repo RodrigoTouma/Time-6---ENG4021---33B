@@ -5,10 +5,16 @@ app_name = "quiz"
 
 urlpatterns = [
     path("", views.home, name='homepage'),
-    path("nacional/", views.modo_nacional, name='modo_nacional'),
-    path("global/", views.modo_global, name='modo_global'),
-    path("ranqueado/", views.modo_ranqueado, name='modo_ranqueado'),
-    path("relogio/", views.modo_relogio, name='modo_relogio'),
+
+    path("modo/nacional/", views.pagina_modo_nacional, name="pagina_modo_nacional"),
+    path("modo/global/", views.pagina_modo_global, name="pagina_modo_global"),
+    path("modo/ranqueado/", views.pagina_modo_ranqueado, name="pagina_modo_ranqueado"),
+    path("modo/relogio/", views.pagina_modo_relogio, name="pagina_modo_relogio"),
+
+    path("iniciar/nacional/", views.iniciar_nacional, name="iniciar_nacional"),
+    path("iniciar/global/", views.iniciar_global, name="iniciar_global"),
+    path("iniciar/ranqueado/", views.iniciar_ranqueado, name="iniciar_ranqueado"),
+    path("iniciar/relogio/", views.iniciar_relogio, name="iniciar_relogio"),
 
     path("pergunta/", views.quiz_pergunta, name="quiz_pergunta"),
     path("responder/", views.responder, name="responder"),

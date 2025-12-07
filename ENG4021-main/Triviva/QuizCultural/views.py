@@ -10,6 +10,18 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     return render(request, "index.html")
 
+def pagina_modo_nacional(request):
+    return render(request, "modo-nacional.html")
+
+def pagina_modo_global(request):
+    return render(request, "modo-global.html")
+
+def pagina_modo_ranqueado(request):
+    return render(request, "modo-ranqueado.html")
+
+def pagina_modo_relogio(request):
+    return render(request, "modo-relogio.html")
+
 def modo_nacional(request):
     perguntas = list(Pergunta.objects.filter(origem="nacional"))
     random.shuffle(perguntas)
@@ -91,7 +103,7 @@ def responder(request):
             "facil": 1,
             "normal": 2,
             "dificil": 3,
-    }
+        }
 
         pontos = pontos_por_dificuldade.get(dificuldade, 1)
         request.session["pontos"] = request.session.get("pontos", 0) + pontos
