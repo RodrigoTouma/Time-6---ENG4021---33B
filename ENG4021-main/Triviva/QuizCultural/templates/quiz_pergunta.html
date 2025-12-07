@@ -11,6 +11,11 @@
 <body>
 
 <div class="quiz-container">
+    {% if request.session.modo == "relogio" %}
+    <div class="timer-box">
+        ⏳ Tempo restante: <span id="tempo">10</span>s
+    </div>
+    {% endif %}
     <h2>Pergunta {{ numero }} / {{ total }}</h2>
 
     <p class="enunciado">{{ pergunta.enunciado }}</p>
@@ -32,7 +37,7 @@
 
 {% if request.session.modo == "relogio" %}
 <script>
-let tempo = 60;
+let tempo = 10;
 
 const textoTempo = document.getElementById("tempo");
 
