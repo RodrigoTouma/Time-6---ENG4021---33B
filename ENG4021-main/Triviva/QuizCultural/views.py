@@ -22,51 +22,6 @@ def pagina_modo_ranqueado(request):
 def pagina_modo_relogio(request):
     return render(request, "modo-relogio.html")
 
-def modo_nacional(request):
-    perguntas = list(Pergunta.objects.filter(origem="nacional"))
-    random.shuffle(perguntas)
-
-    # criar sessão do quiz
-    request.session["perguntas"] = [p.id for p in perguntas[:10]]
-    request.session["index"] = 0
-    request.session["pontos"] = 0
-    request.session["modo"] = "nacional"
-
-    return HttpResponseRedirect(reverse_lazy("quiz:quiz_pergunta"))
-
-def modo_global(request):
-    perguntas = list(Pergunta.objects.filter(origem="global"))
-    random.shuffle(perguntas)
-
-    request.session["perguntas"] = [p.id for p in perguntas[:10]]
-    request.session["index"] = 0
-    request.session["pontos"] = 0
-    request.session["modo"] = "global"
-
-    return HttpResponseRedirect(reverse_lazy("quiz:quiz_pergunta"))
-
-def modo_ranqueado(request):
-    perguntas = list(Pergunta.objects.all())
-    random.shuffle(perguntas)
-
-    request.session["perguntas"] = [p.id for p in perguntas[:15]]
-    request.session["index"] = 0
-    request.session["pontos"] = 0
-    request.session["modo"] = "ranqueado"
-
-    return HttpResponseRedirect(reverse_lazy("quiz:quiz_pergunta"))
-
-def modo_relogio(request):
-    perguntas = list(Pergunta.objects.all())
-    random.shuffle(perguntas)
-
-    request.session["perguntas"] = [p.id for p in perguntas[:10]]
-    request.session["index"] = 0
-    request.session["pontos"] = 0
-    request.session["modo"] = "relogio"
-
-    return HttpResponseRedirect(reverse_lazy("quiz:quiz_pergunta"))
-
 def quiz_pergunta(request):
     perguntas = request.session.get("perguntas", [])
     index = request.session.get("index", 0)
@@ -130,3 +85,50 @@ def resultado(request):
 def ranking(request):
     ranking = Pontuacao.objects.all()
     return render(request, "ranking.html", {"ranking": ranking})
+
+def iniciar_nacional(request):
+    perguntas = list(Pergunta.objects.filter(origem="nacional"))
+    random.shuffle(perguntas)
+
+    request.session["perguntas"] = [p.id for p in perguntas[:10]]
+    request.session["index"] = 0
+    request.session["pontos"] = 0
+    request.session["modo"] = "nacional"
+
+    return HttpResponseRedirect(reverse_lazy("quiz:quiz_pergunta"))
+
+
+def iniciar_global(request):
+    perguntas = list(Pergunta.objects.filter(origem="global"))
+    random.shuffle(perguntas)
+
+    request.session["perguntas"] = [p.id for p in perguntas[:10]]
+    request.session["index"] = 0
+    request.session["pontos"] = 0
+    request.session["modo"] = "global"
+
+    return HttpResponseRedirect(reverse_lazy("quiz:quiz_pergunta"))
+
+
+def iniciar_ranqueado(request):
+    perguntas = list(Pergunta.objects.all())
+    random.shuffle(perguntas)
+
+    request.session["perguntas"] = [p.id for p in perguntas[:15]]
+    request.session["index"] = 0
+    request.session["pontos"] = 0
+    request.session["modo"] = "ranqueado"
+
+    return HttpResponseRedirect(reverse_lazy("quiz:quiz_pergunta"))
+
+
+def iniciar_relogio(request):
+    perguntas = list(Pergunta.objects.all())
+    random.shuffle(perguntas)
+
+    request.session["perguntas"] = [p.id for p in perguntas[:10]]
+    request.session["index"] = 0
+    request.session["pontos"] = 0
+    request.session["modo"] = "relogio"
+
+    return HttpResponseRedirect(reverse_lazy("quiz:quiz_pergunta"))
