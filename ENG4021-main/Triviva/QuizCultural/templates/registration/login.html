@@ -22,7 +22,9 @@
                 <input type="email" name="username" placeholder="Email" class="input-field">
                 <input type="password" name="password" placeholder="Senha" class="input-field">
 
-                <a href="#" class="forgot-link">Esqueci minha senha</a>
+                <a href="{% url 'password_reset' %}" class="forgot-link">
+                    Esqueci minha senha
+                </a>
 
                 <button type="submit" class="login-btn" style="display:block; width:100%;">
                     Login

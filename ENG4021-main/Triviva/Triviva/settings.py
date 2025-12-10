@@ -56,7 +56,9 @@ ROOT_URLCONF = "Triviva.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            BASE_DIR / "QuizCultural" / "templates"
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -112,6 +114,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -128,7 +131,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://127.0.0.1:8000',
 ]
 
-# === Autenticação ===
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/meuTema/'     # vai para a homepage do seu quiz
+LOGIN_REDIRECT_URL = '/meuTema/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
